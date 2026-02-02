@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi Temporal Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <header>
+            <div class="system-status">SYSTEM: ONLINE</div>
+            <h1>TEMPORAL_HUB_v1.0</h1>
+        </header>
+
+        <section class="clock-sector">
+            <div class="label">COORDINATED UNIVERSAL TIME</div>
+            <div id="digital-clock">00:00:00</div>
+            <div id="date-display">-- / -- / ----</div>
+        </section>
+
+        <div class="modules">
+            <section class="module">
+                <h3>STOPWATCH</h3>
+                <div id="stopwatch-display">00:00:00.00</div>
+                <div class="controls">
+                    <button onclick="startStopwatch()">START</button>
+                    <button onclick="stopStopwatch()">STOP</button>
+                    <button onclick="resetStopwatch()">RESET</button>
+                </div>
+            </section>
+
+            <section class="module">
+                <h3>ALARM_SET</h3>
+                <input type="time" id="alarm-time">
+                <div class="controls">
+                    <button onclick="setAlarm()">ARM SYSTEM</button>
+                    <button onclick="clearAlarm()">DISARM</button>
+                </div>
+                <div id="alarm-status">STATUS: IDLE</div>
+            </section>
+        </div>
+    </div>
+
+    <audio id="alarm-sound" loop>
+        <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
